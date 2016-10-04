@@ -8,7 +8,7 @@ import (
 )
 
 
-func TestPersonHasNameAgeAndFriends(*testing.T) {
+func TestPersonHasNameAgeAndFriends(t *testing.T) {
 	Bob := person{name: "Bob", age: 20, friends: []string{"Raf"}}
 	fmt.Print(Bob)
 	//Output: {Bob, 20, [Raf]}
