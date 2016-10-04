@@ -29,13 +29,29 @@ people := []person{
 	//Output: [{Rob, 30, [Pat]}, {Ton, 31, [Mat]}, {Jon, 31, [Kat]}]
 }
 
+
 func TestPeopleCanMakeFriends(t *testing.T) {
 	personA := person{name: "Rod", age: 50}
 	personB := person{name: "Tam", age: 45}
 
-	personA.makeFriend(personB)
+	makeFriends(personA, personB)
 
-	assert.Equal(t, personA.friends, "Tam")
+	fmt.Print("TEST", personA)
+	fmt.Print("TEST", personB)
 
+	assert.Equal(t, personA.friends, []string{"Tam"})
+	//assert.Equal(t, personB.friends, "Rod")
+
+}
+
+func TestPersonListFriends(t *testing.T) {
+	p := person{name: "Bob", age: 20}
+	p.friends = append(p.friends, "John")
+	p.friends = append(p.friends, "Mark")
+	p.friends = append(p.friends, "Luke")
+
+	list := listFriends(p)
+
+	assert.Equal(t, list, []string{"John", "Mark", "Luke"})
 
 }
