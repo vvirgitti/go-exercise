@@ -2,15 +2,15 @@ package main
 
 import "fmt"
 
-func main() {
-
-
-}
-
 type person struct {
 	name string
 	age int
 	friends []string
+}
+
+func main() {
+
+
 }
 
 

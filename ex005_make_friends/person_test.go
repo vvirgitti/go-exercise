@@ -32,9 +32,6 @@ func TestPeopleCanMakeFriends(t *testing.T) {
 
 	makeFriends(personA, personB)
 
-	fmt.Print("TEST", personA)
-	fmt.Print("TEST", personB)
-
 	assert.Equal(t, personA.friends, []string{"Tam"})
 	assert.Equal(t, personB.friends, []string{"Rod"})
 
