@@ -9,21 +9,17 @@ import (
 
 
 func TestPersonHasNameAgeAndFriends(*testing.T) {
-	p := person{name: "Bob", age: 20}
-	p.friends = append(p.friends, "Pat")
-	//Output: {Bob, 20, [Pat]}
+	Bob := person{name: "Bob", age: 20, friends: []string{"Raf"}}
+	fmt.Print(Bob)
+	//Output: {Bob, 20, [Raf]}
 }
 
 func TestPersonCanBeMultiple(t *testing.T) {
 people := []person{
-	{name: "Rob", age: 30},
-	{name: "Tom", age: 31},
-	{name: "Jon", age: 32},
+	{name: "Rob", age: 30, friends: []string{"Pat"}},
+	{name: "Tom", age: 31, friends: []string{"Mat"}},
+	{name: "Jon", age: 32, friends: []string{"Kat"}},
 }
-
-	people[0].friends = append(people[0].friends, "Pat")
-	people[1].friends = append(people[1].friends, "Mat")
-	people[2].friends = append(people[2].friends, "Kat")
 
 	fmt.Print(people)
 	//Output: [{Rob, 30, [Pat]}, {Ton, 31, [Mat]}, {Jon, 31, [Kat]}]
@@ -40,7 +36,7 @@ func TestPeopleCanMakeFriends(t *testing.T) {
 	fmt.Print("TEST", personB)
 
 	assert.Equal(t, personA.friends, []string{"Tam"})
-	//assert.Equal(t, personB.friends, "Rod")
+	assert.Equal(t, personB.friends, []string{"Rod"})
 
 }
 
