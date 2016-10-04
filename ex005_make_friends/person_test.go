@@ -1,8 +1,8 @@
 package main
 
 import (
-	"testing"
 	"fmt"
+	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -29,12 +29,13 @@ people := []person{
 	//Output: [{Rob, 30, [Pat]}, {Ton, 31, [Mat]}, {Jon, 31, [Kat]}]
 }
 
-func TestPeopleCanMakeFriends(*testing.T) {
+func TestPeopleCanMakeFriends(t *testing.T) {
 	personA := person{name: "Rod", age: 50}
 	personB := person{name: "Tam", age: 45}
 
-	if personA.makeFriend(personB) {
-		assert.Equal(t, personA.friends, ["Tam"], "they should be equal")
-	}
+	personA.makeFriend(personB)
+
+	assert.Equal(t, personA.friends, "Tam")
+
 
 }
