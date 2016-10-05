@@ -30,7 +30,7 @@ func TestPeopleCanMakeFriends(t *testing.T) {
 	personA := person{name: "Rod", age: 50}
 	personB := person{name: "Tam", age: 45}
 
-	makeFriends(personA, personB)
+	makeFriends(&personA, &personB)
 
 	assert.Equal(t, personA.friends, []string{"Tam"})
 	assert.Equal(t, personB.friends, []string{"Rod"})
