@@ -29,6 +29,19 @@ func main() {
 }
 
 func trecimate(n int) {
-	fmt.Println("Replace this to get the required output")
+	for n > 1 {
+		if n % 3 == 0 {
+			n = n / 3
+			fmt.Println(n)
+		} else {
+			if (n + 1) % 3 == 0 {
+				n = (n + 1) / 3
+				fmt.Println(n)
+			} else {
+				n = (n - 1) /3
+				fmt.Println(n)
+			}
+		}
+	}
 }
 
